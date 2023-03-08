@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { useEffect, useState } from "react";
+import NewsItem from "./components/NewsItem/item/NewsItem";
+import classes from "./App.module.css";
 function App() {
+  const [data, setData] = useState([]);
+  const fetchData = async () => {
+    const res = await fetch(
+      "https://hacker-news.firebaseio.com/v0/topstories.json"
+    );
+    const data = await res.json();
+
+    setData(data.slice(0, 10));
+  };
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className={classes.wraper}>
+      <header className={classes.header}>
+        <h2>Hacker News</h2>
       </header>
+      <main className={classes.main}>
+        {data.map((item, index) => (
+          <div className={classes.items} key={item}>
+            <span className={classes.num}>{index + 1}.</span>{" "}
+            <NewsItem data={item} />
+          </div>
+        ))}
+      </main>
     </div>
   );
 }

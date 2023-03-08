@@ -1,0 +1,47 @@
+.wraper {
+  border-bottom: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+  margin: 0 2rem 0.5rem 2rem;
+  gap: 1rem;
+  width: 100%;
+}
+.title {
+  color: #ea5421;
+
+  font-weight: 700;
+}
+.detials {
+  display: flex;
+  gap: 25px;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: #ea5421;
+}
+.author svg {
+  fill: rgb(145, 145, 145);
+}
+.points {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: rgb(145, 145, 145);
+}
+.points svg {
+  fill: rgb(145, 145, 145);
+}
+.coments {
+  background-color: rgb(24, 162, 184);
+  border-radius: 10px;
+  padding: 5px 10px;
+  color: #fff;
+  letter-spacing: 1px;
+  font-size: 12px;
+}

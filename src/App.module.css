@@ -1,0 +1,19 @@
+.header {
+  background-color: #ea5421;
+  color: #fff;
+  padding: 0.5rem 4rem;
+}
+.items {
+  display: flex;
+  align-items: center;
+  padding-left: 2rem;
+}
+.main {
+  background-color: rgb(246, 246, 238);
+  padding: 2rem;
+}
+.num {
+  color: black;
+  font-weight: 700;
+  margin-bottom: 3.25rem;
+}
